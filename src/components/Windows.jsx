@@ -1,13 +1,20 @@
-import React from 'react'
+import React from 'react';
+
+import Bullet from './Bullet'
+import Monster from './Monster'
+import Start from './Start'
+import Score from './Score'
+import Ship from './Ship'
 
 class Windows extends React.Component {
+    
     state = {  }
     render() { 
         return ( 
 
-            <>
-            {this.props.children}
-            </>
+            <div id="window">
+            <Ship/>
+            </div>
 
          );
     }
