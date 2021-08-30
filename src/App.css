@@ -33,6 +33,7 @@
 }
 
 .ship{
+  position: relative;
   height: 10vh;
   width: 10vw;
 }

@@ -27,21 +27,22 @@ class Ship extends React.Component {
     //WARNING! To be deprecated in React v17. Use componentDidMount instead.
     c
 
-    
-    componentWillMount() {
+    componentDidMount() {
         document.addEventListener('keydown', this.keyDownHandler.bind(this))
+        document.addEventListener('keyup', this.keyUpHandler.bind(this))
     }
 
+    
 
     keyDownHandler(e) {
-        if (e.key === "D" || e.key == "d") {
+        if (e.key === "D" || e.key == "d" || e.key == "ArrowRight" || e.key == "Right") {
 
             this.setState({
                 r: true
             })
         }
 
-        else if (e.key == "Q" || e.key == "q") {
+        else if (e.key == "Q" || e.key == "q" || e.key == 'ArrowLeft' || e.key == "Left" ) {
 
             this.setState({
                 l: true
@@ -49,20 +50,36 @@ class Ship extends React.Component {
 
         }
         console.log(e.key);
+        this.mooveShip()
     }
 
-    // keyUpHandler(e) {
-    //     if (e.key == "Right" || e.key == "ArrowRight") {
-    //         this.setState({
-    //             r: false
-    //         })
-    //     }
-    //     else if (e.key == "Left" || e.key == "ArrowLeft") {
-    //         this.setState({
-    //             l: false
-    //         })
-    //     }
-    // }
+    keyUpHandler(e) {
+        if (e.key == "Right" || e.key == "ArrowRight" || e.key == "d" || e.key == "D") {
+            this.setState({
+                r: false
+            })
+        }
+        else if (e.key == "Left" || e.key == "ArrowLeft" || e.key == "q" || e.key == "Q") {
+            this.setState({
+                l: false
+            })
+        }
+        this.mooveShip()
+    }
+
+    mooveShip() {
+        if (this.state.l === true){
+            document.querySelector('#ship').style.left = "10px"
+        } else if (this.state.r === true){
+            document.querySelector('#ship').style.right = 100+"px";
+        }
+       
+    }
+
+
+
+    
+
 
     render() {
         console.log(this.state);
@@ -71,8 +88,10 @@ class Ship extends React.Component {
             <div id="ship"
                
                 onKeyDown={(e)=> this.keyDownHandler(e)}
-                tabIndex="0">
-                <img src={ImgShip} alt="" className="ship" />
+                onKeyUp={(e)=> this.keyUpHandler(e)}
+                tabIndex="0"
+                >
+                <img src={ImgShip} alt="ship" className="ship" />
             </div>
 
         );

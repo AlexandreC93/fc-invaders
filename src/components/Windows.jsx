@@ -46,7 +46,7 @@ class Windows extends React.Component {
         return ( 
 
             <div id="window">
-            <Ship moove={this.keyDownHandler}/>
+            <Ship/>
             </div>
 
          );
