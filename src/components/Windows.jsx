@@ -1,4 +1,6 @@
-class Windows extends Component {
+import React from 'react'
+
+class Windows extends React.Component {
     state = {  }
     render() { 
         return ( 
