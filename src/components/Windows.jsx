@@ -6,42 +6,47 @@ import Start from './Start'
 import Score from './Score'
 import Ship from './Ship'
 
+
+
 class Windows extends React.Component {
 
-    constructor(props){
-        super(props)
-        this.state = { 
-            l: false,
-            r: false
-         }
+    
 
-    }
 
-    setY = (y) => {
-        this.y = y
-    }
+    
 
-    mooveKey = (e) =>{
-        if(e.keyC === "q"||"Q"){
-            this.setState({
-                l: true
-            })
-            console.log("q");
-        }
 
-        if(e.key === "d"||"D"){
-            this.setState({
-                r: true
-            })
-            console.log("d");
-        }
-        
-    }
+
+    
+
+// onKeyDown = (e)=> {
+//     let key = e.keyCode
+//     switch (key){
+
+//         case 81: 
+//         this.setState({
+//             l: true 
+//         })
+//         break; 
+
+//         case 68: 
+//         this.setState({
+//             r: true
+//         })
+//         break;
+//         default: 
+//             break;
+
+//     }
+// }
+
+
     render() { 
+        
         return ( 
 
             <div id="window">
-            <Ship key={this.mooveKey}/>
+            <Ship moove={this.keyDownHandler}/>
             </div>
 
          );
