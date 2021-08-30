@@ -1,25 +1,26 @@
 import React from 'react'
 import "./App.css"
 import Windows from './components/Windows'
-import
+import Start from './components/Start'
 
 
-class App extends Component {
+class App extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {  }
+    this.state = {}
   }
-  render() { 
-    return ( 
+  render() {
+    return (
 
       <>
-      <Windows>
-    <h1>Coucou</h1>
-      </Windows>
+        <Windows>
+          <h1>Coucou</h1>
+        </Windows>
+        <Start/>
       </>
 
-     );
+    );
   }
 }
- 
+
 export default App;
