@@ -21,3 +21,18 @@
   color: white;
 }
 
+#window{
+  height: 70vh;
+  width: 80vw;
+  background-color: black;
+  margin: auto;
+  display: flex;
+  flex-flow: column;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.ship{
+  height: 10vh;
+  width: 10vw;
+}
