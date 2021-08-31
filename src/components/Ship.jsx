@@ -14,7 +14,8 @@ class Ship extends React.Component {
         this.state = { 
             l: false,
             r: false,
-            ['']: false 
+            dx:300,
+            
          }
 
         //  const keys = {
@@ -25,7 +26,7 @@ class Ship extends React.Component {
     }
 
     //WARNING! To be deprecated in React v17. Use componentDidMount instead.
-    c
+    
 
     componentDidMount() {
         document.addEventListener('keydown', this.keyDownHandler.bind(this))
@@ -40,41 +41,97 @@ class Ship extends React.Component {
             this.setState({
                 r: true
             })
-        }
 
+            this.mooveShip(50)
+        }
         else if (e.key == "Q" || e.key == "q" || e.key == 'ArrowLeft' || e.key == "Left" ) {
 
             this.setState({
                 l: true
             })
 
+            this.mooveShip(50)
         }
         console.log(e.key);
-        this.mooveShip()
+        
     }
-
     keyUpHandler(e) {
         if (e.key == "Right" || e.key == "ArrowRight" || e.key == "d" || e.key == "D") {
             this.setState({
                 r: false
             })
+            
+            // this.mooveShip(50)
         }
         else if (e.key == "Left" || e.key == "ArrowLeft" || e.key == "q" || e.key == "Q") {
             this.setState({
                 l: false
             })
         }
-        this.mooveShip()
+
+        // this.mooveShip(50)
     }
 
-    mooveShip() {
-        if (this.state.l === true){
-            document.querySelector('#ship').style.left = "10px"
-        } else if (this.state.r === true){
-            document.querySelector('#ship').style.right = 100+"px";
-        }
+    mooveShip(dx) {
+      
+        // const ship = document.querySelector('#ship')
+        // let shipNumber = 0
+        // let leftShip = ship.style.right
+        // let rightShip = ship.style.left
+
+        // if (this.state.l){
+        //     shipNumber += 50
+        //     leftShip = shipNumber + "px"
+        //     ship.style.right += leftShip
+            
+        //     // console.log(ship)
+        //     // console.log(leftShip)
+        //     //     console.log(shipNumber);
+        // } else if (this.state.r ){
+        //     shipNumber += 50
+        //     rightShip += shipNumber + "px";
+        //     ship.style.left += rightShip
+        //     // console.log("cc");
+           
+        // }
+        
+        const ship = document.querySelector("#ship")
+        
+        let position = +this.state.dx;
        
-    }
+        
+              if(this.state.l && this.state.dx < 600){
+                position+=dx;
+                this.setState({dx:position })
+                  ship.style.right = this.state.dx+'px';
+
+              }  
+              if(this.state.r && this.state.dx > 50){
+                position-=dx;
+                this.setState({dx:position })
+                ship.style.right = this.state.dx+'px'
+                
+              }
+              console.log(dx);
+           
+
+        // do{
+        //     if(this.state.l){
+        //         document.querySelector('.ship').style.right += 50 + "px";
+
+        //     }
+        //     if(this.state.r){
+        //         document.querySelector('.ship').style.left += 50 + "px";
+        //     }
+
+        // } while (this.state.l)
+       
+    
+}
+
+      
+
+    
 
 
 

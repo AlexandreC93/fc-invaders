@@ -46,7 +46,9 @@ class Windows extends React.Component {
         return ( 
 
             <div id="window">
+                <div id="ship-cont">
             <Ship/>
+            </div>
             </div>
 
          );
