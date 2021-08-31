@@ -102,7 +102,7 @@ h1 {
   animation-duration: 5s;
 }
 
-
+/* 
 @keyframes pan {
   from{
     position: inherit;
@@ -117,4 +117,4 @@ h1 {
     display: none;
     
   }
-}
+} */

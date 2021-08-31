@@ -15,6 +15,8 @@ class Ship extends React.Component {
             l: false,
             r: false,
             dx: 300,
+            y: 30
+            
 
         }
 
@@ -54,21 +56,29 @@ class Ship extends React.Component {
         }
 
         if (e.key == "e" || e.key == "E") {
+            let position =  +this.state.y
+            setInterval(()=>{
+
+            position += 20
             let div = document.querySelector('#ship')
             let bullet = document.createElement('img')
             bullet.src = '../src/img/bullets.png'
             bullet.classList.add('bullet')
             div.appendChild(bullet)
 
-            // setTimeout(bullet.remove(bullet),5000)
+            
             
             bullet.style.position = "inherit"
-            bullet.style.right = this.state.dx -262 +"px"
-            setInterval(bullet.style.bottom += 70 + "px",1000)        
-            
-            
-            
+            bullet.style.right = "40px"
+            bullet.style.bottom = this.state.y + position + "px"
+
+            this.setState({
+                y: position
+            }) 
+            setTimeout(()=>bullet.remove(bullet),500)
             console.log(bullet);
+            },500)
+            
         }
 
         console.log(e.key);
