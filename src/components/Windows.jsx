@@ -10,14 +10,6 @@ import Ship from './Ship'
 
 class Windows extends React.Component {
 
-    
-
-
-    
-
-
-
-    
 
 // onKeyDown = (e)=> {
 //     let key = e.keyCode

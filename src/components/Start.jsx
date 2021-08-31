@@ -11,21 +11,23 @@ class Start extends React.Component {
 
         return (
             <div className="origin">
+                
                 <div className="divo">
                     
                         <button className="btn"> START </button>
                     
  
                     <ul>
-                        <span>MODE :</span>
+                        <span> MODE :   </span>
                         <select className="monSelect">
                         <option value="easy">Easy</option>
-                        <option value="easy">Normal</option>
-                        <option value="easy">Hard</option>
+                        <option value="normal">Normal</option>
+                        <option value="hard">Hard</option>
                         </select>
                     </ul>
 
                 </div>
+                
             </div>
         );
     }
