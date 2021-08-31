@@ -40,21 +40,12 @@ class Windows extends React.Component {
             <div id="window">
                 <Score />
                 <div id="ship-cont">
-<<<<<<< HEAD
                     
                     <Ship>
                         <Bullet />
                     </Ship>
 
                 </div>
-
-
-=======
-                    <Ship>
-                        <Bullet />
-                    </Ship>
-                </div>
->>>>>>> 644ff221949668ef5586915dcc00fbe9095796c2
             </div>
 
         );
