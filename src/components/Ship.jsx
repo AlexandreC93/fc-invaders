@@ -16,7 +16,7 @@ class Ship extends React.Component {
             r: false,
             dx: 300,
             y: 30
-            
+
 
         }
 
@@ -54,31 +54,40 @@ class Ship extends React.Component {
 
             this.mooveShip(50)
         }
+        // console.log(
+        //     "before", this.state.y);
 
-        if (e.key == "e" || e.key == "E") {
-            let position =  +this.state.y
-            setInterval(()=>{
+        if (e.key == "e" || e.key == "E" && this.state.y < 230) {
+            // console.log(
+            //     "inside",
+                // this.state.y);
+            let position = +this.state.y
+            setInterval(() => {
+                
+                position += 20
+                let bullet = document.createElement('img')
+                let div = document.querySelector('#ship')
+                bullet.src = '../src/img/bullets.png'
+                bullet.classList.add('bullet')
+                div.appendChild(bullet)
 
-            position += 20
-            let div = document.querySelector('#ship')
-            let bullet = document.createElement('img')
-            bullet.src = '../src/img/bullets.png'
-            bullet.classList.add('bullet')
-            div.appendChild(bullet)
 
+
+                bullet.style.position = "inherit"
+                bullet.style.right = "40px"
+                bullet.style.bottom = this.state.y + position + "px"
+
+                this.setState({
+                    y: position
+                })
+                setTimeout(() => bullet.remove(bullet), 500)
+                console.log(this.state.y);
+            }, 500)
             
-            
-            bullet.style.position = "inherit"
-            bullet.style.right = "40px"
-            bullet.style.bottom = this.state.y + position + "px"
-
-            this.setState({
-                y: position
-            }) 
-            setTimeout(()=>bullet.remove(bullet),500)
-            console.log(bullet);
-            },500)
-            
+            setTimeout(()=>
+            document.getElementsByClassName('bullet').remove(document.createElement('img'))
+            ,5000)
+          
         }
 
         console.log(e.key);
