@@ -11,42 +11,47 @@ import Ship from './Ship'
 class Windows extends React.Component {
 
 
-// onKeyDown = (e)=> {
-//     let key = e.keyCode
-//     switch (key){
+    // onKeyDown = (e)=> {
+    //     let key = e.keyCode
+    //     switch (key){
 
-//         case 81: 
-//         this.setState({
-//             l: true 
-//         })
-//         break; 
+    //         case 81: 
+    //         this.setState({
+    //             l: true 
+    //         })
+    //         break; 
 
-//         case 68: 
-//         this.setState({
-//             r: true
-//         })
-//         break;
-//         default: 
-//             break;
+    //         case 68: 
+    //         this.setState({
+    //             r: true
+    //         })
+    //         break;
+    //         default: 
+    //             break;
 
-//     }
-// }
+    //     }
+    // }
 
 
-    render() { 
-        
-        return ( 
+    render() {
+
+        return (
 
             <div id="window">
+                <Score />
                 <div id="ship-cont">
-            <Ship><Bullet/></Ship>
-            </div>
-            
-            
+                    
+                    <Ship>
+                        <Bullet />
+                    </Ship>
+
+                </div>
+
+
             </div>
 
-         );
+        );
     }
 }
- 
+
 export default Windows;
