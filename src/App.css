@@ -81,4 +81,31 @@ h1 {
   height:400px;
   display: flex;
 
+<<<<<<< HEAD
 }
+=======
+.bullet{
+  height: 1vh;
+  width: 1vw;
+  background-color: white;
+  animation-name: pan;
+  animation-duration: 5s;
+}
+
+/* 
+@keyframes pan {
+  from{
+    position: inherit;
+    bottom: 70px;
+    right: 50px;
+  }
+
+  75%{
+    bottom: 500px;
+  }
+  to{
+    display: none;
+    
+  }
+} */
+>>>>>>> 644ff221949668ef5586915dcc00fbe9095796c2

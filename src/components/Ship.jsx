@@ -15,6 +15,8 @@ class Ship extends React.Component {
             l: false,
             r: false,
             dx: 300,
+            y: 30
+            
 
         }
 
@@ -36,7 +38,7 @@ class Ship extends React.Component {
 
 
     keyDownHandler(e) {
-        if (e.key === "D" || e.key == "d" || e.key == "ArrowRight" || e.key == "Right") {
+        if (e.key == "D" || e.key == "d" || e.key == "ArrowRight" || e.key == "Right") {
 
             this.setState({
                 r: true
@@ -53,13 +55,30 @@ class Ship extends React.Component {
             this.mooveShip(50)
         }
 
-        if (e.key === "e" || e.key == "E") {
-            let div = document.querySelector('#window')
+        if (e.key == "e" || e.key == "E") {
+            let position =  +this.state.y
+            setInterval(()=>{
+
+            position += 20
+            let div = document.querySelector('#ship')
             let bullet = document.createElement('img')
-            bullet.src = '../img/bullets.png'
+            bullet.src = '../src/img/bullets.png'
+            bullet.classList.add('bullet')
             div.appendChild(bullet)
-            bullet.style.
-            console.log("cc");
+
+            
+            
+            bullet.style.position = "inherit"
+            bullet.style.right = "40px"
+            bullet.style.bottom = this.state.y + position + "px"
+
+            this.setState({
+                y: position
+            }) 
+            setTimeout(()=>bullet.remove(bullet),500)
+            console.log(bullet);
+            },500)
+            
         }
 
         console.log(e.key);
@@ -110,13 +129,13 @@ class Ship extends React.Component {
         let position = +this.state.dx;
 
 
-        if (this.state.l && this.state.dx < 600) {
+        if (this.state.l && this.state.dx < 800) {
             position += dx;
             this.setState({ dx: position })
             ship.style.right = this.state.dx + 'px';
 
         }
-        if (this.state.r && this.state.dx > 50) {
+        if (this.state.r && this.state.dx > 100) {
             position -= dx;
             this.setState({ dx: position })
             ship.style.right = this.state.dx + 'px'
