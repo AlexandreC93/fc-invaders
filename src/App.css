@@ -80,3 +80,22 @@ h1 {
 }
 
 
+#ship{
+  position: absolute;
+  right: 350px;
+
+}
+
+#ship-cont{
+  display: flex;
+  box-sizing:content-box;
+  width: 100%;
+  height: 20%;
+  
+}
+
+.bullet{
+  height: 10vh;
+  width: 10vw;
+  background-color: white;
+}
