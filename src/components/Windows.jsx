@@ -38,10 +38,13 @@ class Windows extends React.Component {
         return (
 
             <div id="window">
+                <Score />
                 <div id="ship-cont">
+                    
                     <Ship>
                         <Bullet />
                     </Ship>
+
                 </div>
             </div>
 
