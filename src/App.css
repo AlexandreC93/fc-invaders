@@ -2,14 +2,26 @@
   background-color: grey;
 } */
 
+
 .monSelect {
   margin: auto;
   width: 60%;
-  padding: px;
+  padding: 30px;
+  background-color: #e25822;
+  font-size: 17px;
+  font-style: italic;
+
 }
 
 .btn {
   background-color: #4285F4;
+  width: 150px;
+  border:1.5px white;
+  border-radius: 50%;
+  padding: 40px;
+  font-size: 100%;
+  font-style: italic;
+
 }
 
 .divo{
@@ -17,8 +29,11 @@
   width: 50%;
   border: 3px solid black;
   padding: 250px;
-  background-color: black;
+  /* background-color: red; */
   color: white;
+  background-image: url("./img/star.jpg")
+
+  
 }
 
 #window{
@@ -37,6 +52,33 @@
   height: 10vh;
   width: 10vw;
 }
+
+
+.divGame{
+margin: auto;
+  width: 50%;
+  border: 3px solid black;
+  padding: 250px;
+  background-color: black;
+  color: white;
+}
+
+.game{
+  text-align: center;
+  
+}
+@import url(https://fonts.googleapis.com/css?family=Anton&effect=fire-animation);
+html {
+  background: #ddd;
+}
+
+h1 {
+  font-family: 'Anton', sans-serif;
+  font-size: 150px;
+  text-align: center;
+  font-family: serif;
+}
+
 
 #ship{
   position: absolute;

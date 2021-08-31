@@ -7,6 +7,7 @@ import Monster from './components/Monster'
 
 import Score from './components/Score'
 import Ship from './components/Ship'
+import Over from './components/over'
 
 
 class App extends React.Component {
@@ -18,11 +19,16 @@ class App extends React.Component {
     return (
 
       <>
+
+        <Start />
+        <br></br><br></br><br></br><br></br>
+
         <Windows>
           <h1>Coucou</h1>
         </Windows>
-        <Start/>
-      
+        <br></br><br></br><br></br><br></br>
+
+          <Over/>
       </>
 
     );
