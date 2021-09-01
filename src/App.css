@@ -43,6 +43,11 @@
   align-items: center;
 }
 
+#ship{
+  position: absolute;
+  bottom: -500px;
+}
+
 .ship{
   position: relative;
   height: 10vh;
@@ -59,11 +64,8 @@ margin: auto;
   color: white;
 }
 
-.game{
-  text-align: center;
-  
-}
-@import url(https://fonts.googleapis.com/css?family=Anton&effect=fire-animation);
+
+/* @import url(https://fonts.googleapis.com/css?family=Anton&effect=fire-animation); */
 html {
   background: #ddd;
 }
@@ -84,7 +86,7 @@ h1 {
   height: 1vh;
   width: 1vw;
   background-color: white;
-  animation-name: pan;
+ 
   animation-duration: 5s;
 }
 

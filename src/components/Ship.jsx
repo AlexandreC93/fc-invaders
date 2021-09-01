@@ -6,18 +6,15 @@ const minY = 0
 const maxX = 1000
 const minX = 0
 
-
-
 class Ship extends React.Component {
     constructor(props) {
         super(props)
+
         this.state = {
             l: false,
             r: false,
             dx: 300,
             y: 30
-
-
         }
 
         //  const keys = {
@@ -29,13 +26,10 @@ class Ship extends React.Component {
 
     //WARNING! To be deprecated in React v17. Use componentDidMount instead.
 
-
     componentDidMount() {
         document.addEventListener('keydown', this.keyDownHandler.bind(this))
         document.addEventListener('keyup', this.keyUpHandler.bind(this))
     }
-
-
 
     keyDownHandler(e) {
         if (e.key == "D" || e.key == "d" || e.key == "ArrowRight" || e.key == "Right") {
@@ -71,8 +65,6 @@ class Ship extends React.Component {
                 bullet.classList.add('bullet')
                 div.appendChild(bullet)
 
-
-
                 bullet.style.position = "inherit"
                 bullet.style.right = "40px"
                 bullet.style.bottom = this.state.y + position + "px"
@@ -80,19 +72,21 @@ class Ship extends React.Component {
                 this.setState({
                     y: position
                 })
+
                 setTimeout(() => bullet.remove(bullet), 500)
                 console.log(this.state.y);
             }, 500)
             
             setTimeout(()=>
-            document.getElementsByClassName('bullet').remove(document.createElement('img'))
-            ,5000)
+            document.getElementsByClassName('bullet').remove
+            , 5000)
           
         }
 
         console.log(e.key);
 
     }
+
     keyUpHandler(e) {
         if (e.key == "Right" || e.key == "ArrowRight" || e.key == "d" || e.key == "D") {
             this.setState({
@@ -167,21 +161,11 @@ class Ship extends React.Component {
 
     }
 
-
-
-
-
-
-
-
-
-
     render() {
         console.log(this.state);
         return (
 
             <div id="ship"
-
                 onKeyDown={(e) => this.keyDownHandler(e)}
                 onKeyUp={(e) => this.keyUpHandler(e)}
                 tabIndex="0"

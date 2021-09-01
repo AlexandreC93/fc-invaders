@@ -38,7 +38,7 @@ class Windows extends React.Component {
         return (
 
             <div id="window">
-                <Score />
+                {/* <Score /> */}
                 <div id="ship-cont">
                     
                     <Ship>

@@ -12,22 +12,26 @@ import Over from './components/over'
 class App extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {}
+    this.state = {
+      stage: "playing"
+    }
   }
   render() {
     return (
 
       <>
 
-        <Start />
-        <br></br><br></br><br></br><br></br>
+      {this.state.stage === "start" && <Start />}
 
+        
+        
+      {this.state.stage === "playing" &&
         <Windows>
           <h1>Coucou</h1>
         </Windows>
-        <br></br><br></br><br></br><br></br>
+      }
 
-          <Over/>
+      {this.state.stage === "finished" && <Over/>}
       </>
 
     );
