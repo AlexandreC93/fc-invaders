@@ -116,7 +116,7 @@ h1 {
   height: 4vh;
   height: 50%;
   width: 50%;
-  grid-row: 8;
+  grid-row: 5;
   grid-column: 6;
   
   
@@ -129,3 +129,9 @@ h1 {
   grid-area: 9 / 6   ;
   
 }
+
+
+Matcher la balle avec le monstre en passant les row et les columns en state,
+
+SI le x et le y de la balle sont les memes que celles du monstre
+ALORS le monstre et la balle disparaissent

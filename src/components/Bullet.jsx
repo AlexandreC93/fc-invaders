@@ -10,8 +10,7 @@ class Bullet extends React.Component {
         return ( 
 
             <div id="bullet"
-            onKeyDown={(e)=>this.onKeyDown(e)}
-            tabIndex="0">
+           >
                 {}
             {/* <img className="bullet" src={ImgBullet} alt="" /> */}
             </div>
