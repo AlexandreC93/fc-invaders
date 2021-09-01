@@ -10,7 +10,9 @@ class Score extends React.Component {
     render() {
 
         return (
-            <h4 className="score">High Score :</h4>
+            // <h4 className="score">High Score :</h4>
+            <>
+            </>
         );
     }
 }
