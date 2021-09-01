@@ -69,8 +69,8 @@
 
 /* @import url(https://fonts.googleapis.com/css?family=Anton&effect=fire-animation); */
 html {
-  background: #ddd;
-}
+  background: rgb(255, 255, 255);
+} 
 
 h1 {
   font-family: 'Anton', sans-serif;
@@ -112,6 +112,8 @@ h1 {
 
 
 .monster {
+  width: 4vw;
+  height: 4vh;
   height: 50%;
   width: 50%;
   grid-row: 8;

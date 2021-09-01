@@ -39,7 +39,7 @@ class App extends React.Component {
           </Windows>
         }
 
-        {this.state.stage === "finished" && <Over />}
+        {this.state.stage === "finished" && <Over /> }
       </>
 
     );
