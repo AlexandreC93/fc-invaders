@@ -1,6 +1,6 @@
 import React from 'react'
 import ImgShip from '../img/ship.png'
-import ImgBull from '../img/bullets.png'
+import ImgBull from '../img/bullet.png'
 
 const maxY = 1000
 const minY = 0
@@ -15,7 +15,7 @@ class Ship extends React.Component {
             l: false,
             r: false,
             dx: 6,
-            y: 30,
+            y: 4,
             mx: 6
         }
 
@@ -58,29 +58,25 @@ class Ship extends React.Component {
             //     "inside",
                 // this.state.y);
             let position = +this.state.y
-            setInterval(() => {
-                
+            
                 position += 20
-                let bullet = document.createElement('img')
+                // let bullet = document.createElement('img')
                 
-                bullet.src = '../src/img/bullets.png'
-                bullet.classList.add('bullet')
-                
-                let div = document.querySelector('#window')
-                div.appendChild(bullet)
+                // let div = document.querySelector('#window')
+                // div.appendChild(bullet)
 
                 // bullet.style.position = this.state.dx
                 // bullet.style.right = "40px"
-                bullet.style.gridRow = this.state.y + position + "px"
-                bullet.style.gridColumn = this.state.dx
+                 this.state.y += position 
+                
 
                 this.setState({
                     y: position
                 })
 
-                setTimeout(() => bullet.remove(bullet), 500)
+                
                 console.log(this.state.y);
-            }, 2000)
+            
             
             // setTimeout(()=>
             // document.getElementsByClassName('bullet').remove
@@ -140,13 +136,13 @@ class Ship extends React.Component {
         if (this.state.l && this.state.dx > 1) {
             position -= dx;
             this.setState({ dx: position })
-            ship.style.gridColumn = this.state.dx ;
+            // ship.style.gridColumn = this.state.dx ;
 
         }
         if (this.state.r && this.state.dx < 11) {
             position += dx;
             this.setState({ dx: position })
-            ship.style.gridColumn = this.state.dx 
+            // ship.style.gridColumn = this.state.dx 
 
         }
         console.log(dx);
@@ -170,17 +166,22 @@ class Ship extends React.Component {
         // monsterMoove()
         console.log(this.state);
         return (
-
+            <>
             <div id="ship"
                 onKeyDown={(e) => this.keyDownHandler(e)}
                 onKeyUp={(e) => this.keyUpHandler(e)}
                 tabIndex="0"
-            >
+                style={{gridColumn: this.state.dx}}>
+
                 <img src={ImgShip} alt="ship" className="ship" />
             </div>
+             <img src={ImgBull} alt="bullet" className="bull-img" style={{gridColumn: this.state.dx}}  />
+</>
 
         );
     }
 }
 
 export default Ship;
+
+// style={{gridRow: this.state.y}}

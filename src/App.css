@@ -38,12 +38,14 @@
   grid-template-columns: repeat(11, 1fr);
   grid-template-rows: repeat(10, 1fr) ;
   justify-content: center;
-
+  align-items: center;
+  justify-items: center;
 }
 
 #ship {
   grid-column: 6;
   grid-row: 10;
+  overflow: auto;
 
 }
 
@@ -51,6 +53,7 @@
   position: relative;
   height: 10vh;
   width: 10vw;
+  
 }
 
 
@@ -111,9 +114,16 @@ h1 {
 .monster {
   height: 50%;
   width: 50%;
-  grid-row: 5;
+  grid-row: 8;
   grid-column: 6;
   
   
 
+}
+
+.bull-img{
+  height: 3vh;
+  width: 3vw;
+  grid-area: 9 / 6   ;
+  
 }
