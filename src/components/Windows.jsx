@@ -39,15 +39,17 @@ class Windows extends React.Component {
 
             <div id="window">
                 {/* <Score /> */}
-                <div id="ship-cont">
+               
                     
                     <Ship>
                     <Bullet />
                     </Ship>
-                    <Monster/>
+                   
                     
 
-                </div>
+              
+                <Monster/>
+
             </div>
 
         );
