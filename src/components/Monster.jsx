@@ -7,7 +7,10 @@ class Monster extends React.Component {
       }
         render() { 
         return ( 
+          <>
              <img src={ImgMonster} alt="monster" className="monster" />
+             </>
+
          );
     }
 }
