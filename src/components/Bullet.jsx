@@ -5,17 +5,6 @@ class Bullet extends React.Component {
     state = {  }
 
 
-    componentDidMount(){
-        document.addEventListener('keydown', this.OnKeyDown.bind(this))
-    }
-
-onKeyDown(e){
-
-    
-console.log("c");
-}
-
-
 
     render() { 
         return ( 

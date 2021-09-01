@@ -1,5 +1,6 @@
 import React from 'react'
 import ImgShip from '../img/ship.png'
+import ImgBull from '../img/bullets.png'
 
 const maxY = 1000
 const minY = 0
@@ -13,8 +14,9 @@ class Ship extends React.Component {
         this.state = {
             l: false,
             r: false,
-            dx: 300,
-            y: 30
+            dx: 6,
+            y: 30,
+            mx: 6
         }
 
         //  const keys = {
@@ -38,7 +40,7 @@ class Ship extends React.Component {
                 r: true
             })
 
-            this.mooveShip(50)
+            this.mooveShip(1)
         }
         else if (e.key == "Q" || e.key == "q" || e.key == 'ArrowLeft' || e.key == "Left") {
 
@@ -46,7 +48,7 @@ class Ship extends React.Component {
                 l: true
             })
 
-            this.mooveShip(50)
+            this.mooveShip(1)
         }
         // console.log(
         //     "before", this.state.y);
@@ -60,14 +62,17 @@ class Ship extends React.Component {
                 
                 position += 20
                 let bullet = document.createElement('img')
-                let div = document.querySelector('#ship')
+                
                 bullet.src = '../src/img/bullets.png'
                 bullet.classList.add('bullet')
+                
+                let div = document.querySelector('#window')
                 div.appendChild(bullet)
 
-                bullet.style.position = "inherit"
-                bullet.style.right = "40px"
-                bullet.style.bottom = this.state.y + position + "px"
+                // bullet.style.position = this.state.dx
+                // bullet.style.right = "40px"
+                bullet.style.gridRow = this.state.y + position + "px"
+                bullet.style.gridColumn = this.state.dx
 
                 this.setState({
                     y: position
@@ -75,11 +80,11 @@ class Ship extends React.Component {
 
                 setTimeout(() => bullet.remove(bullet), 500)
                 console.log(this.state.y);
-            }, 500)
+            }, 2000)
             
-            setTimeout(()=>
-            document.getElementsByClassName('bullet').remove
-            , 5000)
+            // setTimeout(()=>
+            // document.getElementsByClassName('bullet').remove
+            // , 5000)
           
         }
 
@@ -132,16 +137,16 @@ class Ship extends React.Component {
         let position = +this.state.dx;
 
 
-        if (this.state.l && this.state.dx < 800) {
-            position += dx;
-            this.setState({ dx: position })
-            ship.style.right = this.state.dx + 'px';
-
-        }
-        if (this.state.r && this.state.dx > 100) {
+        if (this.state.l && this.state.dx > 1) {
             position -= dx;
             this.setState({ dx: position })
-            ship.style.right = this.state.dx + 'px'
+            ship.style.gridColumn = this.state.dx ;
+
+        }
+        if (this.state.r && this.state.dx < 11) {
+            position += dx;
+            this.setState({ dx: position })
+            ship.style.gridColumn = this.state.dx 
 
         }
         console.log(dx);
@@ -162,6 +167,7 @@ class Ship extends React.Component {
     }
 
     render() {
+        // monsterMoove()
         console.log(this.state);
         return (
 
