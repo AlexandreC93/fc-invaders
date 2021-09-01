@@ -9,9 +9,6 @@ class Monster extends React.Component {
         return ( 
           <>
              <img src={ImgMonster} alt="monster" className="monster" />
-             <img src={ImgMonster} alt="monster" className="monster" />
-             <img src={ImgMonster} alt="monster" className="monster" />
-             <img src={ImgMonster} alt="monster" className="monster" />
              </>
 
          );

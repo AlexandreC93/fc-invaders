@@ -2,8 +2,6 @@ import React from 'react';
 
 import Bullet from './Bullet'
 import Monster from './Monster.jsx'
-import Start from './Start'
-import Score from './Score'
 import Ship from './Ship'
 
 
