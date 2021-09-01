@@ -104,3 +104,11 @@ h1 {
     
   }
 } */
+
+.monster{
+  width: 4vw;
+  height:4vh;
+  position: absolute;
+  top: 600px;
+  left:450px;
+}
