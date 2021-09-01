@@ -13,25 +13,33 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      stage: "playing"
+      stage: "start"
     }
   }
+
+      startClick = () => {
+        this.setState({
+          stage: "playing"
+        })
+      }
+
+
   render() {
     return (
 
       <>
 
-      {this.state.stage === "start" && <Start />}
+        {this.state.stage === "start" && <Start click={this.startClick} />}
 
-        
-        
-      {this.state.stage === "playing" &&
-        <Windows>
-          <h1>Coucou</h1>
-        </Windows>
-      }
 
-      {this.state.stage === "finished" && <Over/>}
+
+        {this.state.stage === "playing" &&
+          <Windows>
+            <h1>Coucou</h1>
+          </Windows>
+        }
+
+        {this.state.stage === "finished" && <Over />}
       </>
 
     );
