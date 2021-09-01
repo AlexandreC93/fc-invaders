@@ -37,16 +37,10 @@ class Windows extends React.Component {
 
             <div id="window">
                 {/* <Score /> */}
-               
-                    
-                    <Ship>
-                    <Bullet />
-                    </Ship>
-                   
-                    
 
-              
-                <Monster/>
+
+                <Ship />
+                <Monster />
 
             </div>
 

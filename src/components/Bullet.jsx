@@ -13,7 +13,7 @@ class Bullet extends React.Component {
             onKeyDown={(e)=>this.onKeyDown(e)}
             tabIndex="0">
                 {}
-            <img className="bullet" src={ImgBullet} alt="" />
+            {/* <img className="bullet" src={ImgBullet} alt="" /> */}
             </div>
 
          );
