@@ -22,13 +22,9 @@ class Bullet extends React.Component {
 
                 }} />
 
-<<<<<<< HEAD
-            <div id="bullet"
-           >
+            <div/>
             
             {/* <img className="bullet" src={ImgBullet} alt="" /> */}
-=======
->>>>>>> bd0c4da72580079c219991ae5fdb3c8d0e378307
             </div>
 
         );

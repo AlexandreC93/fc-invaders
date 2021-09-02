@@ -6,22 +6,7 @@ import ImgMonster from '../img/Space.png'
 class Monster extends React.Component {
   constructor(props) {
     super(props);
-<<<<<<< HEAD
     this.state = {}
-  }
-
-
-  render() {
-    return (
-      <>
-      
-        <img src={ImgMonster} alt="monster" className="monster" />
-      </>
-
-=======
-    this.state = {
-      
-    }
   }
   render() {
     return (
@@ -31,7 +16,6 @@ class Monster extends React.Component {
       }
       </>
 
->>>>>>> bd0c4da72580079c219991ae5fdb3c8d0e378307
     );
   }
 }
