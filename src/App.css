@@ -1,10 +1,10 @@
 .monSelect {
-  margin: auto;
-  width: 60%;
-  padding: 30px;
+  width: 20vw;
+  height: 10vh;
   background-color: #e25822;
   font-size: 17px;
   font-style: italic;
+  padding-left: 50px;
 
 }
 
