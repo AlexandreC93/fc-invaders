@@ -17,29 +17,25 @@ class App extends React.Component {
     }
   }
 
-      startClick = () => {
-        this.setState({
-          stage: "playing"
-        })
-      }
+  startClick = () => {
+    this.setState({
+      stage: "playing"
+    })
+  }
 
 
   render() {
     return (
 
       <>
-
         {this.state.stage === "start" && <Start click={this.startClick} />}
-
-
-
         {this.state.stage === "playing" &&
           <Windows>
             <h1>Coucou</h1>
           </Windows>
         }
 
-        {this.state.stage === "finished" && <Over /> }
+        {this.state.stage === "finished" && <Over />}
       </>
 
     );

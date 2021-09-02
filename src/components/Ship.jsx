@@ -12,11 +12,10 @@ class Ship extends React.Component {
         super(props)
 
         this.state = {
-            l: false,
-            r: false,
             dx: 6,
-            y: 4,
-            mx: 6
+            y: 9,
+            mx: 6,
+            x: 6
         }
 
         //  const keys = {
@@ -24,159 +23,83 @@ class Ship extends React.Component {
         //      r: false,
         //      ['']: false 
         //  }
+
+        this.keyDownHandler = this.keyDownHandler.bind(this)
     }
 
-    //WARNING! To be deprecated in React v17. Use componentDidMount instead.
+    componentDidUpdate(prevProps, prevState) {
+        if (this.state.y > 1 && this.state.y <= 8) {
+            setTimeout(() => {
+                let position = +this.state.y
 
-    componentDidMount() {
-        document.addEventListener('keydown', this.keyDownHandler.bind(this))
-        document.addEventListener('keyup', this.keyUpHandler.bind(this))
+                position -= 1
+
+                this.state.y -= position
+
+                this.setState({
+                    y: position
+                })
+                console.log(position, "salut");
+            }, 300)
+
+        }
     }
 
     keyDownHandler(e) {
-        if (e.key == "D" || e.key == "d" || e.key == "ArrowRight" || e.key == "Right") {
+        if ((e.key == "D" || e.key == "d" || e.key == "ArrowRight" || e.key == "Right") && this.state.dx < 11) {
 
-            this.setState({
-                r: true
-            })
-
-            this.mooveShip(1)
+            this.setState({ dx: this.state.dx + 1 })
         }
-        else if (e.key == "Q" || e.key == "q" || e.key == 'ArrowLeft' || e.key == "Left") {
+        else if ((e.key == "Q" || e.key == "q" || e.key == 'ArrowLeft' || e.key == "Left") && this.state.dx > 1) {
 
-            this.setState({
-                l: true
-            })
-
-            this.mooveShip(1)
+            this.setState({ dx: this.state.dx - 1 })
         }
         // console.log(
         //     "before", this.state.y);
 
         if (e.key == "e" || e.key == "E" && this.state.y < 230) {
-            // console.log(
-            //     "inside",
-                // this.state.y);
+
+
             let position = +this.state.y
-            
-                position += 20
-                // let bullet = document.createElement('img')
-                
-                // let div = document.querySelector('#window')
-                // div.appendChild(bullet)
 
-                // bullet.style.position = this.state.dx
-                // bullet.style.right = "40px"
-                 this.state.y += position 
-                
+            position -= 1
 
-                this.setState({
-                    y: position
-                })
+            this.state.y -= position
 
-                
-                console.log(this.state.y);
-            
-            
+            this.setState({
+                y: position,
+                x: this.state.dx
+            })
+
+            // console.log(this.state.y);
+
+
             // setTimeout(()=>
             // document.getElementsByClassName('bullet').remove
             // , 5000)
-          
+
         }
 
         console.log(e.key);
 
     }
 
-    keyUpHandler(e) {
-        if (e.key == "Right" || e.key == "ArrowRight" || e.key == "d" || e.key == "D") {
-            this.setState({
-                r: false
-            })
-
-            // this.mooveShip(50)
-        }
-        else if (e.key == "Left" || e.key == "ArrowLeft" || e.key == "q" || e.key == "Q") {
-            this.setState({
-                l: false
-            })
-        }
-
-        // this.mooveShip(50)
-    }
-
-    mooveShip(dx) {
-
-        // const ship = document.querySelector('#ship')
-        // let shipNumber = 0
-        // let leftShip = ship.style.right
-        // let rightShip = ship.style.left
-
-        // if (this.state.l){
-        //     shipNumber += 50
-        //     leftShip = shipNumber + "px"
-        //     ship.style.right += leftShip
-
-        //     // console.log(ship)
-        //     // console.log(leftShip)
-        //     //     console.log(shipNumber);
-        // } else if (this.state.r ){
-        //     shipNumber += 50
-        //     rightShip += shipNumber + "px";
-        //     ship.style.left += rightShip
-        //     // console.log("cc");
-
-        // }
-
-        const ship = document.querySelector("#ship")
-
-        let position = +this.state.dx;
-
-
-        if (this.state.l && this.state.dx > 1) {
-            position -= dx;
-            this.setState({ dx: position })
-            // ship.style.gridColumn = this.state.dx ;
-
-        }
-        if (this.state.r && this.state.dx < 11) {
-            position += dx;
-            this.setState({ dx: position })
-            // ship.style.gridColumn = this.state.dx 
-
-        }
-        console.log(dx);
-
-
-        // do{
-        //     if(this.state.l){
-        //         document.querySelector('.ship').style.right += 50 + "px";
-
-        //     }
-        //     if(this.state.r){
-        //         document.querySelector('.ship').style.left += 50 + "px";
-        //     }
-
-        // } while (this.state.l)
-
-
-    }
 
     render() {
         // monsterMoove()
         console.log(this.state);
         return (
             <>
-            <div id="ship"
-                onKeyDown={(e) => this.keyDownHandler(e)}
-                onKeyUp={(e) => this.keyUpHandler(e)}
-                tabIndex="0"
-                style={{gridColumn: this.state.dx}}>
+                <div id="ship"
+                    onKeyDown={(e) => this.keyDownHandler(e)}
+                    tabIndex="0"
+                    style={{ gridColumn: this.state.dx }}>
 
-                <img src={ImgShip} alt="ship" className="ship" />
-            </div>
-             <img src={ImgBull} alt="bullet" className="bull-img" style={{gridColumn: this.state.dx}}  />
-</>
+                    <img src={ImgShip} alt="ship" className="ship" />
+                </div>
+                <img src={ImgBull} alt="bullet" className="bull-img" style={{ gridColumn: this.state.x, gridRow: this.state.y,
+                  display: this.state.y >= 9 && "none"}}  />
+            </>
 
         );
     }
