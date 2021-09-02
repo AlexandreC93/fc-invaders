@@ -6,7 +6,8 @@ import Bullet from './components/Bullet'
 import Monster from './components/Monster.jsx'
 import Score from './components/Score'
 import Ship from './components/Ship'
-import Over from './components/over'
+import Over from './components/Over'
+import Winner from "./components/Winner"
 
 
 class App extends React.Component {
@@ -29,13 +30,17 @@ class App extends React.Component {
 
       <>
         {this.state.stage === "start" && <Start click={this.startClick} />}
-        {this.state.stage === "playing" &&
+        {
+          this.state.stage === "playing" &&
           <Windows>
             <h1>Coucou</h1>
           </Windows>
         }
 
         {this.state.stage === "finished" && <Over />}
+
+        <Winner/>
+
       </>
 
     );
