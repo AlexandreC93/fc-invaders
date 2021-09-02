@@ -24,6 +24,7 @@ class App extends React.Component {
       }
 
 
+
   render() {
     return (
 
@@ -40,6 +41,8 @@ class App extends React.Component {
         }
 
         {this.state.stage === "finished" && <Over /> }
+
+        {this.state.stage === "win" && <Winner/>}
       </>
 
     );

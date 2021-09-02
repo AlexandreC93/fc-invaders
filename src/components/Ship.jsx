@@ -16,8 +16,38 @@ class Ship extends React.Component {
             mx: 6,
             my: 7,
             onHit: false,
-            bulletHidden: true
+            bulletHidden: true,
+            monsters: [
+
+                { mx: 1, my: 5 },
+                { mx: 2, my: 5 },
+                { mx: 3, my: 5 },
+                { mx: 4, my: 5 },
+                { mx: 5, my: 5 },
+                { mx: 6, my: 5 },
+                { mx: 7, my: 5 },
+                { mx: 8, my: 5 },
+                { mx: 9, my: 5 },
+                { mx: 10, my: 5 },
+                { mx: 11, my: 5 },
+
+                { mx: 1, my: 6 },
+                { mx: 2, my: 6 },
+                { mx: 3, my: 6 },
+                { mx: 4, my: 6 },
+                { mx: 5, my: 6 },
+                { mx: 6, my: 6 },
+                { mx: 7, my: 6 },
+                { mx: 8, my: 6 },
+                { mx: 9, my: 6 },
+                { mx: 10, my: 6 },
+                { mx: 11, my: 6 }
+
+            ]
+
         }
+
+
 
         // this.didUpdate = false
         //  const keys = {
@@ -31,14 +61,29 @@ class Ship extends React.Component {
 
     componentDidUpdate(prevProps, prevState) {
 
+        // if (this.state.onHit) {
+        //     this.setState({
+        //         onHit: false
+        //     })
+        // }
+
         if (!this.state.onHit) {
 
-            if (this.state.y === this.state.my && this.state.x === this.state.mx) {
-                this.setState({
-                    onHit: true,
-                    y: 10
-                })
-                console.log("hit");
+            for (let i = 0; i < this.state.monsters.length; i++) {
+
+                console.log(this.state.monsters[i], "monster")
+
+                if (this.state.monsters[i].my === this.state.y && this.state.x === this.state.monsters[i].mx) {
+                    this.setState({
+                        bulletHidden: true,
+                        y: 10
+                    })
+
+                    this.state.monsters.splice(i,1)
+                    console.log("hit")
+
+
+                }
 
             }
         }
@@ -61,7 +106,7 @@ class Ship extends React.Component {
 
         } else {
 
-            console.log(2);
+            // console.log(2);
 
             // if (prevState.bulletHidden !== this.state.bulletHidden && prevProps.y !== this.props.y && this.props.y >= 9 || this.props.y < 2) {
             if (prevState.bulletHidden === this.state.bulletHidden && this.state.bulletHidden === false && this.state.y < 2) {
@@ -102,7 +147,7 @@ class Ship extends React.Component {
         // console.log(
         //     "before", this.state.y);
 
-        if (e.key == " " || e.key == "Space" ) {
+        if (e.key == " " || e.key == "Space") {
 
 
             let position = +this.state.y
@@ -134,7 +179,9 @@ class Ship extends React.Component {
     render() {
         // monsterMoove()
 
-        // console.log(this.state);
+        console.log(this.state);
+
+
         return (
             <>
                 <div id="ship"
@@ -145,31 +192,31 @@ class Ship extends React.Component {
 
                     <img src={ImgShip} alt="ship" className="ship" />
                 </div>
+
                 {/* <img src={ImgBull} alt="bullet" className="bull-img" style={{
                     gridColumn: this.state.x, gridRow: this.state.y,
                     display: this.state.y >= 9 && "none"
                 }} /> */}
 
-                {!this.state.onHit &&
+
+                {/* {!this.state.onHit &&
                     <Monster mx={this.state.mx} my={this.state.my} x={this.state.x} y={this.state.y} />
-                    
-                }
-                {!this.state.onHit &&
-                    <Monster mx={this.state.mx} my={this.state.my} x={this.state.x} y={this.state.y} />
-                    
-                }
-                {!this.state.onHit &&
-                    <Monster mx={this.state.mx} my={this.state.my} x={this.state.x} y={this.state.y} />
-                    
-                }
-                {!this.state.onHit &&
-                    <Monster mx={this.state.mx} my={this.state.my} x={this.state.x} y={this.state.y} />
-                    
-                }
+
+                } */}
+                
+
+                {this.state.monsters.map((elem) => {
+
+                    return (
+                        <Monster mx={elem.mx} my={elem.my} />
+
+                    )
+                })}
 
                 {!this.state.bulletHidden &&
                     <Bullet x={this.state.x} y={this.state.y} isHidden={this.state.bulletHidden} />
                 }
+                {}
             </>
 
         );
