@@ -1,26 +1,23 @@
 import React from 'react'
-import ImgBull from '../img/bullets.png'
+import ImgBull from '../img/bullet.png'
 
 class Bullet extends React.Component {
-    state = {}
-
-
 
     render() {
+
         return (
 
-            <div id="bullet" >
+            <div id="bullet" style={{
 
-                <img src={ImgBull} 
-                alt="bullet" 
-                className="bull-img" 
-                style={{
+                gridColumn: this.props.x, gridRow: this.props.y,
 
-                    gridColumn: this.props.x, gridRow: this.props.y,
+                display: this.props.isHidden ? "none" : "inherit"
 
-                    display: this.props.y >= 9 && "none"
-
-                }} />
+            }}>
+                <img src={ImgBull}
+                    alt="bullet"
+                    className="bull-img"
+                     />
 
             <div/>
             

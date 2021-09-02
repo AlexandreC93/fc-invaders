@@ -4,10 +4,6 @@ import ImgBull from '../img/bullet.png'
 import Monster from './Monster'
 import Bullet from './Bullet'
 
-const maxY = 1000
-const minY = 0
-const maxX = 1000
-const minX = 0
 
 class Ship extends React.Component {
     constructor(props) {
@@ -19,7 +15,8 @@ class Ship extends React.Component {
             x: 6,
             mx: 6,
             my: 7,
-            onHit: false
+            onHit: false,
+            bulletHidden: true
         }
 
         // this.didUpdate = false
@@ -32,26 +29,19 @@ class Ship extends React.Component {
         this.keyDownHandler = this.keyDownHandler.bind(this)
     }
 
-
-
-
-
-
     componentDidUpdate(prevProps, prevState) {
 
         if (!this.state.onHit) {
 
             if (this.state.y === this.state.my && this.state.x === this.state.mx) {
                 this.setState({
-                    onHit: true
+                    onHit: true,
+                    y: 10
                 })
                 console.log("hit");
 
             }
         }
-        console.log(prevState, "prevstate");
-        console.log(this.state, "state");
-
 
         if (this.state.y > 1 && this.state.y <= 8 && prevState.y !== this.state.y) {
 
@@ -65,10 +55,24 @@ class Ship extends React.Component {
                 this.setState({
                     y: position
                 })
-                console.log(position, "salut");
+                // console.log(position, "salut");
             }, 300)
 
 
+        } else {
+
+            console.log(2);
+
+            // if (prevState.bulletHidden !== this.state.bulletHidden && prevProps.y !== this.props.y && this.props.y >= 9 || this.props.y < 2) {
+            if (prevState.bulletHidden === this.state.bulletHidden && this.state.bulletHidden === false && this.state.y < 2) {
+
+                this.setState({
+                    bulletHidden: true,
+                    y: 9
+                })
+
+                console.log("condition yes");
+            }
         }
 
     }
@@ -98,7 +102,7 @@ class Ship extends React.Component {
         // console.log(
         //     "before", this.state.y);
 
-        if (e.key == "e" || e.key == "E" && this.state.y < 230) {
+        if (e.key == " " || e.key == "Space" ) {
 
 
             let position = +this.state.y
@@ -109,7 +113,8 @@ class Ship extends React.Component {
 
             this.setState({
                 y: position,
-                x: this.state.dx
+                x: this.state.dx,
+                bulletHidden: false
             })
 
             // console.log(this.state.y);
@@ -121,7 +126,7 @@ class Ship extends React.Component {
 
         }
 
-        console.log(e.key);
+        // console.log(e.key);
 
     }
 
@@ -129,7 +134,7 @@ class Ship extends React.Component {
     render() {
         // monsterMoove()
 
-        console.log(this.state);
+        // console.log(this.state);
         return (
             <>
                 <div id="ship"
@@ -140,16 +145,30 @@ class Ship extends React.Component {
 
                     <img src={ImgShip} alt="ship" className="ship" />
                 </div>
-                <img src={ImgBull} alt="bullet" className="bull-img" style={{
+                {/* <img src={ImgBull} alt="bullet" className="bull-img" style={{
                     gridColumn: this.state.x, gridRow: this.state.y,
                     display: this.state.y >= 9 && "none"
-                }} />
+                }} /> */}
 
                 {!this.state.onHit &&
-                    <>
-                        <Monster mx={this.state.mx} my={this.state.my} x={this.state.x} y={this.state.y} />
-                        <Bullet x={this.state.x} y={this.state.y} />
-                    </>
+                    <Monster mx={this.state.mx} my={this.state.my} x={this.state.x} y={this.state.y} />
+                    
+                }
+                {!this.state.onHit &&
+                    <Monster mx={this.state.mx} my={this.state.my} x={this.state.x} y={this.state.y} />
+                    
+                }
+                {!this.state.onHit &&
+                    <Monster mx={this.state.mx} my={this.state.my} x={this.state.x} y={this.state.y} />
+                    
+                }
+                {!this.state.onHit &&
+                    <Monster mx={this.state.mx} my={this.state.my} x={this.state.x} y={this.state.y} />
+                    
+                }
+
+                {!this.state.bulletHidden &&
+                    <Bullet x={this.state.x} y={this.state.y} isHidden={this.state.bulletHidden} />
                 }
             </>
 
