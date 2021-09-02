@@ -130,8 +130,16 @@ h1 {
   grid-area: 9 / 6   ;
   
 }
+<<<<<<< HEAD
+=======
+
+>>>>>>> bd0c4da72580079c219991ae5fdb3c8d0e378307
 /* 
 Matcher la balle avec le monstre en passant les row et les columns en state,
 
 SI le x et le y de la balle sont les memes que celles du monstre
+<<<<<<< HEAD
 ALORS le monstre et la balle disparaissent */
+=======
+ALORS le monstre et la balle disparaissent. */
+>>>>>>> bd0c4da72580079c219991ae5fdb3c8d0e378307
