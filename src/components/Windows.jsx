@@ -42,7 +42,7 @@ class Windows extends React.Component {
 
 
                 <Ship />
-                <Monster />
+               
 
             </div>
 
