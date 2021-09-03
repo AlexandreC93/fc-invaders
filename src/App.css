@@ -136,9 +136,3 @@ Matcher la balle avec le monstre en passant les row et les columns en state,
 SI le x et le y de la balle sont les memes que celles du monstre
 <<<<<<< HEAD
 ALORS le monstre et la balle disparaissent */
-
-.winner{
-  margin: auto;
-  width: 80%;
-  padding: 200px;
-}

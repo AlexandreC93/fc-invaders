@@ -7,8 +7,7 @@ import Monster from './components/Monster.jsx'
 import Score from './components/Score'
 import Ship from './components/Ship'
 import Over from './components/Over'
-import Winner from "./components/Winner"
-
+import Winner from './components/Winner'
 
 class App extends React.Component {
   constructor(props) {

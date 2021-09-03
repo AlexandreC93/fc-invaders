@@ -1,6 +1,5 @@
 import React from 'react'
-import ImgWinner from '../img/youWin.jpg'
-
+import ImgWin from '../img/winer.jpg'
 
 class Winner extends React.Component {
     constructor(props) {
@@ -12,7 +11,7 @@ class Winner extends React.Component {
 
         return (
 
-            <img src={ImgWinner} alt="winner" className="winner" />
+            <img src={ImgWin} alt="winner" className="winner" />
 
         );
     }
