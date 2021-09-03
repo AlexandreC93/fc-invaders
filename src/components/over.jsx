@@ -1,4 +1,5 @@
 import React from 'react'
+import OverImg from '../img/gameover.jpg'
 
 
 class Over extends React.Component {
@@ -11,8 +12,7 @@ class Over extends React.Component {
 
         return (
             <div className="divGame">
-                <h1 className="font-effect-fire-animation">GAME OVER !</h1>
-
+                <img className="over" src={OverImg} alt="over" />
             </div>
         );
     }

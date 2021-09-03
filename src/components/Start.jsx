@@ -20,9 +20,9 @@ class Start extends React.Component {
 
                     <button className="btn" onClick={this.props.click}> START </button>
 
-
+                   
                     <ul>
-                        <span> MODE :   </span>
+                    <span> MODE :   </span>
                         <select className="monSelect">
                             <option value="easy">Easy</option>
                             <option value="normal">Normal</option>

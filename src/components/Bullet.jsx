@@ -19,9 +19,9 @@ class Bullet extends React.Component {
                     className="bull-img"
                      />
 
-            <div/>
             
-            {/* <img className="bullet" src={ImgBullet} alt="" /> */}
+            
+           
             </div>
 
         );

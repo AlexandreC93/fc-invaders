@@ -24,21 +24,25 @@ class App extends React.Component {
   }
 
 
+
   render() {
     return (
 
       <>
-        {this.state.stage === "start" && <Start click={this.startClick} />}
+
+        {this.state.stage === "start" &&
+          <Start click={this.startClick} />}
+
         {
           this.state.stage === "playing" &&
-          <Windows>
-            <h1>Coucou</h1>
-          </Windows>
+          <Windows />
         }
 
-        {this.state.stage === "finished" && <Over />}
 
-        <Winner/>
+
+       
+
+
 
       </>
 
