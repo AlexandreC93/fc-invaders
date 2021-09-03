@@ -18,11 +18,11 @@ class App extends React.Component {
     }
   }
 
-      startClick = () => {
-        this.setState({
-          stage: "playing"
-        })
-      }
+  startClick = () => {
+    this.setState({
+      stage: "playing"
+    })
+  }
 
 
 
@@ -31,20 +31,19 @@ class App extends React.Component {
 
       <>
 
-        {this.state.stage === "start" && <Start click={this.startClick} />}
-        
+        {this.state.stage === "start" &&
+          <Start click={this.startClick} />}
+
         {
           this.state.stage === "playing" &&
-          <Windows>
-            <h1>Coucou</h1>
-          </Windows>
+          <Windows />
         }
 
-        {this.state.stage === "win" && <Winner/>}
-        
-        {this.state.stage === "finished" && <Over />}
 
-        <Winner/>
+
+       
+
+
 
       </>
 

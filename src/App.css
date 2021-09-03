@@ -1,32 +1,57 @@
 .monSelect {
   width: 20vw;
   height: 10vh;
-  background-color: #e25822;
+  background-color: black;
   font-size: 17px;
   font-style: italic;
   padding-left: 50px;
+  margin-left:5vw ;
+  color: white;
 
 }
 
+.monSelect:hover{
+  background-color: white;
+  color: black;
+  transition: 0.5s;
+  cursor: pointer;
+}
+
 .btn {
-  background-color: #4285F4;
+  background-color: black;
   width: 150px;
   border: 1.5px white;
-  border-radius: 50%;
-  padding: 40px;
+  border-radius: 30px;
+  padding: 20px;
   font-size: 100%;
   font-style: italic;
+  border: solid 1px white;
+  color: white;
 
+}
+
+ul{
+  margin-top:10vh ;
+}
+
+.btn:hover{
+  background-color: white;
+  color: black;
+  transition: 0.5s;
+  cursor: pointer;
 }
 
 .divo {
   margin: auto;
-  width: 50%;
-  border: 3px solid black;
-  padding: 250px;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  
+  
   /* background-color: red; */
   color: white;
-  background-image: url("./img/star.jpg")
+  
 }
 
 #window {
@@ -56,12 +81,21 @@
   
 }
 
+.origin{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url("./img/star.jpg");
+  width: 100vw;
+  height: 100vh;
+}
+
 
 .divGame {
   margin: auto;
-  width: 50%;
-  border: 3px solid black;
-  padding: 250px;
+  width: 50vw;
+  height: 30vh;
+  padding-left: 15vw;
   background-color: black;
   color: white;
 }
@@ -69,7 +103,7 @@
 
 /* @import url(https://fonts.googleapis.com/css?family=Anton&effect=fire-animation); */
 html {
-  background: rgb(255, 255, 255);
+  background-image: url("./img/star.jpg");
 } 
 
 h1 {
@@ -138,6 +172,16 @@ ALORS le monstre et la balle disparaissent */
 
 .winner{
   margin: auto;
-  width: 80%;
-  padding: 200px;
+  width: 40vw;
+  height: 60vh;
+  padding-left: 20vw;
+  padding-top: 5vh;
+  
+}
+
+.over{
+  margin-top: 10vh;
+  margin-left: 6vw;
+  height: 50vh;
+  width: 40vw;
 }
