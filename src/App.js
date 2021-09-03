@@ -6,7 +6,7 @@ import Bullet from './components/Bullet'
 import Monster from './components/Monster.jsx'
 import Score from './components/Score'
 import Ship from './components/Ship'
-import Over from './components/Over'
+import Over from './components/over.jsx'
 import Winner from './components/Winner'
 
 class App extends React.Component {

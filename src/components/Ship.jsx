@@ -4,7 +4,7 @@ import ImgBull from '../img/bullet.png'
 import Monster from './Monster'
 import Bullet from './Bullet'
 import Winner from "./Winner"
-import Over from './Over'
+import Over from './over'
 
 
 class Ship extends React.Component {
